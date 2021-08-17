@@ -8,8 +8,6 @@ const userRouter = require('./routers/user.router')
 dotenv.config()
 const bcrypt = require("bcryptjs")
 
-const pass = bcrypt.hashSync('12345',10)
-console.log(pass)
 
 const app = express();
 app.use(cors())
