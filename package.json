@@ -1,11 +1,10 @@
 {
   "name": "ecommerce-z",
-  
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start":"nodemon backend/server.js"
+    "start": "nodemon backend/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +15,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "history": "^5.0.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.7",
     "nodemon": "^2.0.12"
   }
