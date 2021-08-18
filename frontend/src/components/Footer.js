@@ -7,7 +7,7 @@ function Footer() {
     <footer>
       <Container>
         <Row>
-          <Col className = "text-center py-3"> @copyright &copy; </Col>
+          <Col className = "text-center py-3"> @copyright &copy; Shailesh</Col>
         </Row>
       </Container>
       </footer>

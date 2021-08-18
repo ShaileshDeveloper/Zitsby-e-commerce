@@ -17,15 +17,15 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
         };
       }
 
-      case 'CART_REMOVE_ITEM':
-       return { 
-           ...state,
-           cartItems:state.cartItems.filter((x) => x.product !== action.payload)
-       }
+    case "CART_REMOVE_ITEM":
+      return {
+        ...state,
+        cartItems: state.cartItems.filter((x) => x.product !== action.payload),
+      };
 
       break;
 
     default:
-      return state
+      return state;
   }
 };

@@ -8,7 +8,7 @@ const productListReducer = (state = { products: [] }, action) => {
       return { loading: false, error: action.payload };
 
     default:
-        return state
+      return state;
   }
 };
 export const productDetailsReducer = (state = { products: [] }, action) => {
@@ -21,7 +21,7 @@ export const productDetailsReducer = (state = { products: [] }, action) => {
       return { loading: false, error: action.payload };
 
     default:
-        return state
+      return state;
   }
 };
 
