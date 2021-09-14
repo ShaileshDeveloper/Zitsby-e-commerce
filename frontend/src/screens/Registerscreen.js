@@ -34,8 +34,8 @@ function Registerscreen({ location, history }) {
         <Formcontainer>
           <h1>Sign UP</h1>
           {errors && <h6>Password dont match</h6>}
-          {error && <h1>Error hai</h1>}
-          {loading && <h1>loadier</h1>}
+          {error && <h4>{error.message}</h4>}
+          {loading && <h3>Creating your account...</h3>}
           <Form onSubmit={submitHandler}>
             <Form.Group controlId="name">
               <Form.Label>Name</Form.Label>

@@ -4,7 +4,7 @@ export const productListAction = () => async (dispatch) => {
   try {
     dispatch({ type: "PRODUCT_LIST_REQUEST" });
 
-    const { data } = await axios.get("https://zitsby-e-commerce-backend.shaileshweb.repl.co/products");
+    const { data } = await axios.get("https://zitsby-e-commerce-backend-2.shaileshweb.repl.co/products");
 
     dispatch({ type: "PRODUCT_LIST_SUCCESS", payload: data });
   } catch (error) {
@@ -15,7 +15,7 @@ export const productDetailsAction = (id) => async (dispatch) => {
   try {
     dispatch({ type: "PRODUCT_DETAILS_REQUEST" });
 
-    const { data } = await axios.get(`https://zitsby-e-commerce-backend.shaileshweb.repl.co/products/${id}`);
+    const { data } = await axios.get(`https://zitsby-e-commerce-backend-2.shaileshweb.repl.co/products/${id}`);
 
     dispatch({ type: "PRODUCT_DETAILS_SUCCESS", payload: data });
   } catch (error) {

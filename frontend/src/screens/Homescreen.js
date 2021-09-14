@@ -7,13 +7,14 @@ import Footer from "../components/Footer";
 import { Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { productListAction } from "../actions/productActions";
+import { productListAction }  from "../actions/productActions";
 
 import { useSelector, useDispatch } from "react-redux";
 
 function Homescreen() {
   const dispatch = useDispatch();
-
+  
+  
   const productList = useSelector((state) => state.productList);
   const { loading, error, products } = productList;
 
@@ -26,7 +27,7 @@ function Homescreen() {
 
       <Container>
         {loading ? (
-          <h1>Loading ...</h1>
+          <h1 style={{textAlign:'center'}}>Loading ...</h1>
         ) : error ? (
           <h3>error</h3>
         ) : (

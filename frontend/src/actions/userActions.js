@@ -11,7 +11,7 @@ export const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "/users/login",
+      "https://zitsby-e-commerce-backend-2.shaileshweb.repl.co/users/login",
       { email, password },
       config
     );
@@ -32,7 +32,7 @@ export const register = (name, email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "/users",
+      "https://zitsby-e-commerce-backend-2.shaileshweb.repl.co/users/register",
       { name, email, password },
       config
     );

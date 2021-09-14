@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const addToCart = (id, qty) => async (dispatch, getState) => {
-  const { data } = await axios.get(`https://zitsby-e-commerce-backend.shaileshweb.repl.co/products/${id}`);
+  const { data } = await axios.get(`https://zitsby-e-commerce-backend-2.shaileshweb.repl.co/products/${id}`);
   console.log(data, "shailesh");
 
   dispatch({
@@ -12,7 +12,7 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
       image: data.image,
       price: data.price,
       countInStock: data.countInStock,
-      qty,
+      qty,   
     },
   });
 

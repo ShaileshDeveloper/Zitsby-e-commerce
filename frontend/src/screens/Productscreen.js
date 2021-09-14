@@ -35,7 +35,7 @@ function Productscreen({ history, match }) {
         Go Back
       </Link>
       {loading ? (
-        <h3>Loading</h3>
+        <h3 style={{textAlign: 'center'}}>Loading</h3>
       ) : error ? (
         <h4>error</h4>
       ) : (
