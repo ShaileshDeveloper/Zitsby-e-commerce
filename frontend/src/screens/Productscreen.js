@@ -8,16 +8,16 @@ import {
   Container,
   Form,
 } from "react-bootstrap";
-import Rating from "../components/rating";
-import { Link } from "react-router-dom";
-import axios from "axios";
+
+import { Link , useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { productDetailsAction } from "../actions/productActions";
+import {Loader} from '../components/loader'
 
-function Productscreen({ history, match }) {
+function Productscreen({  match }) {
   const [qty, setQty] = useState(1);
-
+  const history = useHistory();
   const dispatch = useDispatch();
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, products, error } = productDetails;
@@ -35,9 +35,9 @@ function Productscreen({ history, match }) {
         Go Back
       </Link>
       {loading ? (
-        <h3 style={{textAlign: 'center'}}>Loading</h3>
+        <Loader />
       ) : error ? (
-        <h4>error</h4>
+        <h4>{error}</h4>
       ) : (
         <Container>
           <Row>
@@ -46,20 +46,16 @@ function Productscreen({ history, match }) {
                 <Image src={products.image} alt={products.name} fluid />
               </Container>
             </Col>
+
             <Col md={3}>
               <ListGroup variant="flush">
                 <ListGroup.Item>
                   <h3>{products.name}</h3>
                 </ListGroup.Item>
-                <ListGroup.Item>
-                  <Rating
-                    value={products.rating}
-                    text={` ${products.numReviews}`}
-                  />
-                </ListGroup.Item>
                 <ListGroup.Item>{products.description}</ListGroup.Item>
               </ListGroup>
             </Col>
+
             <Col md={3}>
               <ListGroup variant="flush">
                 <ListGroup.Item>

@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-// import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../actions/userActions";
 
@@ -9,6 +8,10 @@ function Header() {
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
+
+  const cart = useSelector((state) => state.cart);
+
+  const { cartItems } = cart;
 
   const logoutHandler = () => {
     dispatch(logout());
@@ -25,7 +28,7 @@ function Header() {
             <Nav className="ml-auto">
               <LinkContainer to="/cart">
                 <Nav.Link>
-                  <i className="fas fa-shopping-cart">Cart</i>
+                 Cart<small className="quantity"><strong>{cartItems.reduce((acc, item) => acc + item.qty, 0)}</strong></small>
                 </Nav.Link>
               </LinkContainer>
               {userInfo ? (
@@ -40,7 +43,7 @@ function Header() {
               ) : (
                 <LinkContainer to="/login">
                   <Nav.Link href="/signin">
-                    <i className="fas fa-user">Sign in</i>
+                    Sign in
                   </Nav.Link>
                 </LinkContainer>
               )}

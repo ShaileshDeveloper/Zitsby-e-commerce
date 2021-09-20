@@ -13,13 +13,14 @@ function Registerscreen({ location, history }) {
   const dispatch = useDispatch();
   const userRegister = useSelector((state) => state.userRegister);
   const { loading, error, userInfo } = userRegister;
-  const redirect = location.search ? location.search.split("=")[1] : "/";
+  
 
   useEffect(() => {
     if (userInfo) {
-      history.push(redirect);
+      history.push('/');
     }
-  }, [history, userInfo, redirect]);
+  }, [history, userInfo]);
+  
   const submitHandler = (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
@@ -84,7 +85,7 @@ function Registerscreen({ location, history }) {
           <Row className="py-3">
             <Col>
               HAve an account?{" "}
-              <Link to={redirect ? `/login?redirect=${redirect}` : "/login"}>
+              <Link to={ "/login"}>
                 Login
               </Link>
             </Col>

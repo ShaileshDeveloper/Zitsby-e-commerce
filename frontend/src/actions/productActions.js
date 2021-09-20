@@ -11,6 +11,7 @@ export const productListAction = () => async (dispatch) => {
     dispatch({ type: "PRODUCT_LIST_FAIL", payload: error });
   }
 };
+
 export const productDetailsAction = (id) => async (dispatch) => {
   try {
     dispatch({ type: "PRODUCT_DETAILS_REQUEST" });

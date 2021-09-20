@@ -1,6 +1,5 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import Rating from "../components/rating";
 import { Link } from "react-router-dom";
 
 function ProductCard({ product }) {
@@ -16,13 +15,6 @@ function ProductCard({ product }) {
             <Card.Title as="div">
               <strong>{product.name}</strong>
             </Card.Title>
-            <Card.Text className="py-3" as="div">
-              <Rating
-                value={product.rating}
-                text={product.numReviews}
-                color={"gold"}
-              />
-            </Card.Text>
             <Card.Text as="div">Rs {product.price}</Card.Text>
           </a>
         </Card.Body>

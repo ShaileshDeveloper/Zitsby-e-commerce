@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link , NavLink } from "react-router-dom";
+import { Link , NavLink,useLocation,useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   Row,
@@ -13,10 +13,11 @@ import {
 } from "react-bootstrap";
 import { addToCart, removeFromCart } from "../actions/cartAction";
 
-function CartScreen({ match, location, history }) {
+function CartScreen({ match,  history }) {
   const productId = match.params.id;
+  const location = useLocation()
   const qty = location.search ? Number(location.search.split("=")[1]) : 1;
-  console.log(qty);
+  
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
   const dispatch = useDispatch();
@@ -81,7 +82,8 @@ function CartScreen({ match, location, history }) {
                         variant="light"
                         onClick={() => removeFromCartHandler(item.product)}
                       >
-                        <i className=" fas fa-trash"></i>
+                        {/* <i className="fas fa-trash"></i> */}
+                        remove
                       </Button>
                     </Col>
                   </Row>

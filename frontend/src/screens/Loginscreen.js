@@ -15,7 +15,7 @@ function Loginscreen({ location, history }) {
 
   useEffect(() => {
     if (userInfo) {
-      history.push(redirect);
+      history.push("/");
     }
   }, [history, userInfo, redirect]);
   const submitHandler = (e) => {
@@ -28,7 +28,7 @@ function Loginscreen({ location, history }) {
         <Formcontainer>
           <h1>Signin</h1>
           {error && <h1>Error hai</h1>}
-          {loading && <h1>loadier</h1>}
+          {loading && <h1>loading</h1>}
           <Form onSubmit={submitHandler}>
             <Form.Group controlId="email">
               <Form.Label>Email Address</Form.Label>
@@ -58,7 +58,7 @@ function Loginscreen({ location, history }) {
             <Col>
               New Customer?{" "}
               <Link
-                to={redirect ? `/register?redirect=${redirect}` : "/register"}
+                to={ "/register"}
               >
                 Register
               </Link>
