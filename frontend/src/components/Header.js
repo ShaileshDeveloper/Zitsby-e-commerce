@@ -26,6 +26,11 @@ function Header() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
+              <LinkContainer to="/wishlist">
+                <Nav.Link>
+                 Wishlist
+                </Nav.Link>
+              </LinkContainer>
               <LinkContainer to="/cart">
                 <Nav.Link>
                  Cart<small className="quantity"><strong>{cartItems.reduce((acc, item) => acc + item.qty, 0)}</strong></small>

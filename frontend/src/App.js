@@ -4,6 +4,7 @@ import Productscreen from "./screens/Productscreen";
 import Cartscreen from "./screens/Cartscreen";
 import Loginscreen from "./screens/Loginscreen";
 import Registerscreen from "./screens/Registerscreen";
+import Wishlistscreen from "./screens/Wishlistscreen";
 import "./bootstrap.min.css";
 import { Route } from "react-router-dom";
 
@@ -15,6 +16,7 @@ function App() {
       <Route path="/login" component={Loginscreen } />
       <Route path="/register" component={Registerscreen } />
       <Route path="/cart/:id?" component={Cartscreen } />
+      <Route path="/wishlist/:id?" component={Wishlistscreen } />
     </div>
   );
 }
